@@ -12,6 +12,7 @@ namespace LibraryManager.Application.DTOs.Response
         public int StatusCode { get; set; }
         public string Message { get; set; }
         public dynamic Response { get; set; }
-         
+        public Dictionary<string, string[]> Errors { get; set; }
+
     }
 }

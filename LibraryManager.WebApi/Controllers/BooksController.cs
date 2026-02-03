@@ -1,7 +1,8 @@
-using LibraryManager.Application.DTOs.Request;
+﻿using LibraryManager.Application.DTOs.Request;
 using LibraryManager.Application.DTOs.Response;
 using LibraryManager.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 
 namespace LibraryManager.WebApi.Controllers
@@ -19,6 +20,12 @@ namespace LibraryManager.WebApi.Controllers
         }
 
         #region GetBooksSortedByAuthor 
+        /// <summary>
+        ///  a sorted list by Author (last, first) then title
+        ///
+        /// </summary>
+        /// <param name="request">PageRequestDTO</param>
+        /// <returns>Apiresponse</returns>
         [HttpGet]
         [Route("sorted-by-author")]
         public async Task<IActionResult> GetBooksSortedByAuthor([FromQuery] PageRequestDTO request)
@@ -53,6 +60,11 @@ namespace LibraryManager.WebApi.Controllers
         #endregion
 
         #region GetBooksSortedByPublisher 
+        /// <summary>
+        /// sorted list of these by Publisher, Author (last, first), then title.
+        /// </summary>
+        /// <param name="request">PageRequestDTO</param>
+        /// <returns>Apiresponse</returns>
         [HttpGet]
         [Route("sorted-by-publisher")]
         public async Task<IActionResult> GetBooksSortedByPublisher([FromQuery] PageRequestDTO request)
@@ -87,6 +99,10 @@ namespace LibraryManager.WebApi.Controllers
         #endregion
 
         #region GetBooksTotalPrice 
+        /// <summary>
+        /// the total price of all books in the database
+        /// </summary>
+        /// <returns>ApiResponse</returns>
         [HttpGet]
         [Route("total-price")]
         public async Task<IActionResult> GetBooksTotalPrice()
@@ -121,9 +137,14 @@ namespace LibraryManager.WebApi.Controllers
         #endregion
 
         #region BookBulkSave 
+        /// <summary>
+        /// save the entire list to the database, with only one call to the DB server
+        /// </summary>
+        /// <param name="requestDTO">BookBulkSaveRequestDTO</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("bulk-save")]
-        public async Task<IActionResult> BookBulkSave([FromBody]BookBulkSaveRequestDTO requestDTO)
+        public async Task<IActionResult> BookBulkSave([FromBody] BookBulkSaveRequestDTO requestDTO)
         {
             ApiResponse apiResponse = null;
             try
