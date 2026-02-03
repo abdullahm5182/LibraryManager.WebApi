@@ -1,4 +1,5 @@
 🚀 Tech Stack
+
 .NET Core 8 – Backend framework
 
 Dapper ORM – Lightweight and efficient data access
@@ -10,6 +11,7 @@ Mapster – High-performance object mapping
 Serilog – Structured logging and monitoring
 
 ⚙️ Implementation Details
+
 Dependency Injection (DI)
 
 Auto-registration in .NET Core 8 for services, repositories, and utilities
@@ -35,6 +37,7 @@ Mapping
 Mapster used for DTO ↔ Entity conversions with minimal configuration
 
 📖 Best Practices
+
 Modular architecture with clear separation of concerns
 
 Reusable utilities for edge cases and backend variability
@@ -42,3 +45,16 @@ Reusable utilities for edge cases and backend variability
 Consistent logging and monitoring for observability
 
 Clean folder structures with lazy loading and maintainable patterns
+
+_____________________________________________________________________________________
+Steps to setup:
+
+1.Navigate to the SQL directory and review the provided table schemas and stored procedures.
+
+2.Create a LocalDB instance and execute the SQL scripts to initialize the database.
+
+3.Update the connection string in appsettings.json with your LocalDB details.
+
+4.Build the solution and run the application.
+
+5.Test the Library endpoints to confirm everything is working as expected.
